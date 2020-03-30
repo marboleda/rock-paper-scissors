@@ -25,13 +25,28 @@ function game() {
     let playerPoints = 0;
     let computerPoints = 0;
     let message;
+    let computerSelectionID;
+    let computerSelection;
 
     for (i = 0; i < 5; i++) {
-        message = playRound(prompt("Rock, Paper, or Scissors?"));
+        computerSelectionID = Math.floor(Math.random() * 3);
+        console.log(computerSelectionID);
+        switch(computerSelectionID) {
+            case 0:
+                computerSelection = "rock";
+                break;
+            case 1:
+                computerSelection = "scissors";
+                break;
+            case 2:
+                computerSelection = "paper";
+                break;
+        }
+        message = playRound(prompt("Rock, Paper, or Scissors?"), computerSelection);
         console.log(message);
         if (message.substr(0,8) == "You Win!") {
             playerPoints++;
-        } else {
+        } else if (message.substr(0,9) == "You Lose!") {
             computerPoints++;
         }
     }
