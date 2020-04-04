@@ -65,6 +65,7 @@ const scissorsButton = document.querySelector("#scissors");
 const paperButton = document.querySelector("#paper");
 
 rockButton.addEventListener("click", () => {
+    if (playerPoints == 5 || computerPoints == 5) return;
     results.textContent = playRound("rock");
     addScore(results.textContent);
     if (playerPoints == 5 || computerPoint == 5) {
@@ -73,6 +74,7 @@ rockButton.addEventListener("click", () => {
 });
 
 scissorsButton.addEventListener("click", () => {
+    if (playerPoints == 5 || computerPoints == 5) return;
     results.textContent = playRound("scissors");
     addScore(results.textContent);
     if (playerPoints == 5 || computerPoint == 5) {
@@ -81,6 +83,7 @@ scissorsButton.addEventListener("click", () => {
 });
 
 paperButton.addEventListener("click", () => {
+    if (playerPoints == 5 || computerPoints == 5) return;
     results.textContent = playRound("paper");
     addScore(results.textContent);
     if (playerPoints == 5 || computerPoint == 5) {
