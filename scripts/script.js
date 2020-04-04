@@ -27,10 +27,10 @@ function game() {
     let message;
     let computerSelectionID;
     let computerSelection;
+    const results = document.querySelector("#results");
 
     for (i = 0; i < 5; i++) {
         computerSelectionID = Math.floor(Math.random() * 3);
-        console.log(computerSelectionID);
         switch(computerSelectionID) {
             case 0:
                 computerSelection = "rock";
@@ -43,7 +43,7 @@ function game() {
                 break;
         }
         message = playRound(prompt("Rock, Paper, or Scissors?"), computerSelection);
-        console.log(message);
+        results.textContent = message;
         if (message.substr(0,8) == "You Win!") {
             playerPoints++;
         } else if (message.substr(0,9) == "You Lose!") {
@@ -52,11 +52,11 @@ function game() {
     }
 
     if (playerPoints > computerPoints) {
-        console.log("Congratulations, you won the game!");
+        results.textContent = "Congratulations, you won the game!";
     } else if (playerPoints < computerPoints) {
-        console.log("YOU LOSE.");
+        results.textContent = "YOU LOSE.";
     } else {
-        console.log("It's a tie!");
+        results.textContent = "It's a tie!";
     }
 }
 
