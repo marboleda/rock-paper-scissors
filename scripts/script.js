@@ -21,43 +21,41 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function game() {
-    let playerPoints = 0;
-    let computerPoints = 0;
-    let message;
-    let computerSelectionID;
-    let computerSelection;
-    const results = document.querySelector("#results");
+let playerPoints = 0;
+let computerPoints = 0;
+let message;
+let computerSelectionID;
+let computerSelection;
+const results = document.querySelector("#results");
+const rockButton = document.querySelector("#rock");
+const scissorsButton = document.querySelector("#scissors");
+const paperButton = document.querySelector("#paper");
 
-    for (i = 0; i < 5; i++) {
-        computerSelectionID = Math.floor(Math.random() * 3);
-        switch(computerSelectionID) {
-            case 0:
-                computerSelection = "rock";
-                break;
-            case 1:
-                computerSelection = "scissors";
-                break;
-            case 2:
-                computerSelection = "paper";
-                break;
-        }
-        message = playRound(prompt("Rock, Paper, or Scissors?"), computerSelection);
-        results.textContent = message;
-        if (message.substr(0,8) == "You Win!") {
-            playerPoints++;
-        } else if (message.substr(0,9) == "You Lose!") {
-            computerPoints++;
-        }
+for (i = 0; i < 5; i++) {
+    computerSelectionID = Math.floor(Math.random() * 3);
+    switch(computerSelectionID) {
+        case 0:
+            computerSelection = "rock";
+            break;
+        case 1:
+            computerSelection = "scissors";
+            break;
+        case 2:
+            computerSelection = "paper";
+            break;
     }
-
-    if (playerPoints > computerPoints) {
-        results.textContent = "Congratulations, you won the game!";
-    } else if (playerPoints < computerPoints) {
-        results.textContent = "YOU LOSE.";
-    } else {
-        results.textContent = "It's a tie!";
+    results.textContent = message;
+    if (message.substr(0,8) == "You Win!") {
+        playerPoints++;
+    } else if (message.substr(0,9) == "You Lose!") {
+        computerPoints++;
     }
 }
 
-game();
+if (playerPoints > computerPoints) {
+    results.textContent = "Congratulations, you won the game!";
+} else if (playerPoints < computerPoints) {
+    results.textContent = "YOU LOSE.";
+} else {
+    results.textContent = "It's a tie!";
+}
