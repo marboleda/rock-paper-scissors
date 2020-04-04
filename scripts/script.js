@@ -68,7 +68,7 @@ rockButton.addEventListener("click", () => {
     if (playerPoints == 5 || computerPoints == 5) return;
     results.textContent = playRound("rock");
     addScore(results.textContent);
-    if (playerPoints == 5 || computerPoint == 5) {
+    if (playerPoints == 5 || computerPoints == 5) {
         displayWinningMessage(playerPoints, computerPoints);
     }
 });
@@ -77,7 +77,7 @@ scissorsButton.addEventListener("click", () => {
     if (playerPoints == 5 || computerPoints == 5) return;
     results.textContent = playRound("scissors");
     addScore(results.textContent);
-    if (playerPoints == 5 || computerPoint == 5) {
+    if (playerPoints == 5 || computerPoints == 5) {
         displayWinningMessage(playerPoints, computerPoints);
     }
 });
@@ -86,7 +86,7 @@ paperButton.addEventListener("click", () => {
     if (playerPoints == 5 || computerPoints == 5) return;
     results.textContent = playRound("paper");
     addScore(results.textContent);
-    if (playerPoints == 5 || computerPoint == 5) {
+    if (playerPoints == 5 || computerPoints == 5) {
         displayWinningMessage(playerPoints, computerPoints);
     }
 });
