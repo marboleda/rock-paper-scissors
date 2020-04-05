@@ -54,6 +54,15 @@ function displayWinningMessage(playerPoints, computerPoints) {
     }
 }
 
+function buttonPress(playerChoice) {
+    if (playerPoints == 5 || computerPoints == 5) return;
+    results.textContent = playRound(playerChoice);
+    addScore(results.textContent);
+    if (playerPoints == 5 || computerPoints == 5) {
+        displayWinningMessage(playerPoints, computerPoints);
+    }    
+}
+
 let playerPoints = 0;
 let computerPoints = 0;
 let computerSelectionID;
@@ -65,28 +74,13 @@ const scissorsButton = document.querySelector("#scissors");
 const paperButton = document.querySelector("#paper");
 
 rockButton.addEventListener("click", () => {
-    if (playerPoints == 5 || computerPoints == 5) return;
-    results.textContent = playRound("rock");
-    addScore(results.textContent);
-    if (playerPoints == 5 || computerPoints == 5) {
-        displayWinningMessage(playerPoints, computerPoints);
-    }
+    buttonPress("rock");
 });
 
 scissorsButton.addEventListener("click", () => {
-    if (playerPoints == 5 || computerPoints == 5) return;
-    results.textContent = playRound("scissors");
-    addScore(results.textContent);
-    if (playerPoints == 5 || computerPoints == 5) {
-        displayWinningMessage(playerPoints, computerPoints);
-    }
+    buttonPress("scissors");
 });
 
 paperButton.addEventListener("click", () => {
-    if (playerPoints == 5 || computerPoints == 5) return;
-    results.textContent = playRound("paper");
-    addScore(results.textContent);
-    if (playerPoints == 5 || computerPoints == 5) {
-        displayWinningMessage(playerPoints, computerPoints);
-    }
+    buttonPress("paper");
 });
