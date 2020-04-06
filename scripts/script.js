@@ -49,10 +49,13 @@ function addScore(resultsString) {
 }
 
 function displayWinningMessage(playerPoints, computerPoints) {
+    const finalResults = document.querySelector("#finalResults");
     if (playerPoints > computerPoints) {
         results.textContent = "Congratulations, you won the game!";
+        finalResults.textContent = "Winner: Player";
     } else if (playerPoints < computerPoints) {
         results.textContent = "YOU LOSE.";
+        finalResults.textContent = "Winner: Computer";
     } else {
         results.textContent = "It's a tie!";
     }
