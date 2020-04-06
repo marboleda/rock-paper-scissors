@@ -39,8 +39,12 @@ function playRound(playerSelection) {
 function addScore(resultsString) {
     if (resultsString.substr(0,8) == "You Win!") {
         playerPoints++;
+        const playerScore = document.querySelector("#playerScore")
+        playerScore.textContent = `Player Score: ${playerPoints}`;
     } else if (resultsString.substr(0,9) == "You Lose!") {
         computerPoints++;
+        const computerScore = document.querySelector("#computerScore");
+        computerScore.textContent = `Computer Score: ${computerPoints}`;
     }
 }
 
