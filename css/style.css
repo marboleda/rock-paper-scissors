@@ -1,0 +1,24 @@
+h1, p {
+    text-align: center;
+}
+
+#choices, #finalResults {
+    display: flex;
+    justify-content: center;
+}
+
+#choices > * {
+    margin: 5px;
+}
+
+#scores {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+}
+
+#playerScore, #computerScore, #results {
+    height: 30vh;
+    width: 33.33333%;
+    text-align: center;
+}
