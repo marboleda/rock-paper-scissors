@@ -1,10 +1,29 @@
+* {
+    color: #F6F7F8;
+    font-family: Arial;
+}
+
+body {
+    background-color: #1B2845;
+}
+
+h1 {
+    font-family: sans-serif;
+    margin-bottom: 75px;
+}
+
 h1, p {
     text-align: center;
+}
+
+button {
+    background-color: black;
 }
 
 #choices, #finalResults {
     display: flex;
     justify-content: center;
+    margin: 0 auto;
 }
 
 #choices > * {
@@ -14,11 +33,17 @@ h1, p {
 #scores {
     display: flex;
     flex-direction: row;
-    width: 100vw;
+    width: 95vw;
+    margin: 0 auto;
+}
+
+#playerScore, #computerScore {
+    border: 5px solid black;
+    background-color: #056DBB;
 }
 
 #playerScore, #computerScore, #results {
-    height: 30vh;
-    width: 33.33333%;
+    height: 40vh;
+    width: 33.3333%;
     text-align: center;
 }
