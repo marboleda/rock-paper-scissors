@@ -10,6 +10,4 @@ Built a Rock Paper Scissors game
 - Event Handling in JavaScript
 
 ## To-Do
-- Add an event listener to the buttons that calls playRound with the correct playerSelection everytime a button is clicked
-- Display the running score
 - Style with CSS
