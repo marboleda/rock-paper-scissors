@@ -16,6 +16,11 @@ h1, p {
     text-align: center;
 }
 
+.image {
+    border-radius: 100%;
+    border: 10px solid #6F73D2;
+}
+
 button {
     background-color: black;
 }

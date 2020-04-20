@@ -1,3 +1,17 @@
+let playerPoints = 0;
+let computerPoints = 0;
+let computerSelectionID;
+let computerSelection;
+let playerSelection;
+const results = document.querySelector("#results");
+const rockButton = document.querySelector("#rock");
+const scissorsButton = document.querySelector("#scissors");
+const paperButton = document.querySelector("#paper");
+const playerImage = document.querySelector("#playerImage");
+const computerImage = document.querySelector("#computerImage");
+const playerScoreText = document.querySelector("#playerScoreText");
+const computerScoreText = document.querySelector("#computerScoreText");
+
 function playRound(playerSelection) {
     let computerSelection;
 
@@ -15,6 +29,8 @@ function playRound(playerSelection) {
             computerSelection = "paper";
             break;
     }
+
+    displayImages(playerSelection, computerSelection);
     
     if (playerSelection == computerSelection) {
         return "It's a tie!";
@@ -39,13 +55,11 @@ function playRound(playerSelection) {
 function addScore(resultsString) {
     if (resultsString.substr(0,8) == "You Win!") {
         playerPoints++;
-        const playerScore = document.querySelector("#playerScore")
-        playerScore.textContent = `Player Score: ${playerPoints}`;
+        playerScoreText.textContent = `Player Score: ${playerPoints}`;
     } else if (resultsString.substr(0,9) == "You Lose!") {
         computerPoints++;
-        const computerScore = document.querySelector("#computerScore");
-        computerScore.textContent = `Computer Score: ${computerPoints}`;
-    }
+        computerScoreText.textContent = `Computer Score: ${computerPoints}`;
+    } 
 }
 
 function displayWinningMessage(playerPoints, computerPoints) {
@@ -70,15 +84,36 @@ function buttonPress(playerChoice) {
     }    
 }
 
-let playerPoints = 0;
-let computerPoints = 0;
-let computerSelectionID;
-let computerSelection;
-let playerSelection;
-const results = document.querySelector("#results");
-const rockButton = document.querySelector("#rock");
-const scissorsButton = document.querySelector("#scissors");
-const paperButton = document.querySelector("#paper");
+
+function displayImages(playerChoice, computerChoice) {
+
+    switch (playerChoice) {
+        case "rock":
+            playerImage.setAttribute("src","images/rock.png");
+            break;
+        case "paper":
+            playerImage.setAttribute("src","images/paper.jpg");
+            break;
+        case "scissors":
+            playerImage.setAttribute("src","images/scissors.jpg");
+            break;
+    }
+
+    switch (computerChoice) {
+        case "rock":
+            computerImage.setAttribute("src","images/rock.png");
+            break;
+        case "paper":
+            computerImage.setAttribute("src","images/paper.jpg");
+            break;
+        case "scissors":
+            computerImage.setAttribute("src","images/scissors.jpg");
+            break;
+    }
+
+    playerImage.classList.add("image");
+    computerImage.classList.add("image");
+}
 
 rockButton.addEventListener("click", () => {
     buttonPress("rock");
