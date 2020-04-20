@@ -16,9 +16,14 @@ h1, p {
     text-align: center;
 }
 
-.image {
+.round_image {
     border-radius: 100%;
     border: 10px solid #6F73D2;
+}
+
+.winner_image {
+    position: relative;
+    width: 90%;
 }
 
 button {

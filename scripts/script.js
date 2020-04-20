@@ -11,6 +11,8 @@ const playerImage = document.querySelector("#playerImage");
 const computerImage = document.querySelector("#computerImage");
 const playerScoreText = document.querySelector("#playerScoreText");
 const computerScoreText = document.querySelector("#computerScoreText");
+const winnerImage = document.querySelector("#winnerImage");
+const resultsText = document.querySelector("#resultsText");
 
 function playRound(playerSelection) {
     let computerSelection;
@@ -65,20 +67,23 @@ function addScore(resultsString) {
 function displayWinningMessage(playerPoints, computerPoints) {
     const finalResults = document.querySelector("#finalResults");
     if (playerPoints > computerPoints) {
-        results.textContent = "Congratulations, you won the game!";
+        resultsText.textContent = "Congratulations, you won the game!";
         finalResults.textContent = "Winner: Player";
+        winnerImage.setAttribute("src", "images/player.jpg");
     } else if (playerPoints < computerPoints) {
-        results.textContent = "YOU LOSE.";
+        resultsText.textContent = "YOU LOSE.";
         finalResults.textContent = "Winner: Computer";
+        winnerImage.setAttribute("src","images/computer.jpg");
     } else {
         results.textContent = "It's a tie!";
     }
+    winnerImage.classList.add("winner_image");
 }
 
 function buttonPress(playerChoice) {
     if (playerPoints == 5 || computerPoints == 5) return;
-    results.textContent = playRound(playerChoice);
-    addScore(results.textContent);
+    resultsText.textContent = playRound(playerChoice);
+    addScore(resultsText.textContent);
     if (playerPoints == 5 || computerPoints == 5) {
         displayWinningMessage(playerPoints, computerPoints);
     }    
@@ -111,8 +116,8 @@ function displayImages(playerChoice, computerChoice) {
             break;
     }
 
-    playerImage.classList.add("image");
-    computerImage.classList.add("image");
+    playerImage.classList.add("round_image");
+    computerImage.classList.add("round_image");
 }
 
 rockButton.addEventListener("click", () => {
