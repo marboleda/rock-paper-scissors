@@ -24,6 +24,7 @@ h1, p {
 .winner_image {
     position: relative;
     width: 90%;
+    max-width: 240px;
 }
 
 button {
