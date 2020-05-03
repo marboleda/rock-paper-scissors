@@ -8,6 +8,3 @@ Built a Rock Paper Scissors game
 ## What did I learn?
 - DOM Manipulation
 - Event Handling in JavaScript
-
-## To-Do
-- Style with CSS
