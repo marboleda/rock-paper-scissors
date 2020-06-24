@@ -1,8 +1,6 @@
 let playerPoints = 0;
 let computerPoints = 0;
 let computerSelectionID;
-let computerSelection;
-let playerSelection;
 const results = document.querySelector("#results");
 const rockButton = document.querySelector("#rock");
 const scissorsButton = document.querySelector("#scissors");
