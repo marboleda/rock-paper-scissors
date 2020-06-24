@@ -53,10 +53,10 @@ function playRound(playerSelection) {
 }
 
 function addScore(resultsString) {
-  if (resultsString.substr(0,8) == 'You Win!') {
+  if (resultsString.substr(0, 8) == 'You Win!') {
     playerPoints++;
     playerScoreText.textContent = `Player Score: ${playerPoints}`;
-  } else if (resultsString.substr(0,9) == 'You Lose!') {
+  } else if (resultsString.substr(0, 9) == 'You Lose!') {
     computerPoints++;
     computerScoreText.textContent = `Computer Score: ${computerPoints}`;
   } 
@@ -71,7 +71,7 @@ function displayWinningMessage(playerPoints, computerPoints) {
   } else if (playerPoints < computerPoints) {
     resultsText.textContent = 'YOU LOSE.';
     finalResults.textContent = 'Winner: Computer';
-    winnerImage.setAttribute('src','images/computer.jpg');
+    winnerImage.setAttribute('src', 'images/computer.jpg');
   } else {
     results.textContent = "It's a tie!";
   }
@@ -92,25 +92,25 @@ function displayImages(playerChoice, computerChoice) {
 
   switch (playerChoice) {
     case 'rock':
-      playerImage.setAttribute('src','images/rock.png');
+      playerImage.setAttribute('src', 'images/rock.png');
       break;
     case 'paper':
-      playerImage.setAttribute('src','images/paper.jpg');
+      playerImage.setAttribute('src', 'images/paper.jpg');
       break;
     case 'scissors':
-      playerImage.setAttribute('src','images/scissors.jpg');
+      playerImage.setAttribute('src', 'images/scissors.jpg');
       break;
   }
 
   switch (computerChoice) {
     case 'rock':
-      computerImage.setAttribute('src','images/rock.png');
+      computerImage.setAttribute('src', 'images/rock.png');
       break;
     case 'paper':
-      computerImage.setAttribute('src','images/paper.jpg');
+      computerImage.setAttribute('src', 'images/paper.jpg');
       break;
     case 'scissors':
-      computerImage.setAttribute('src','images/scissors.jpg');
+      computerImage.setAttribute('src', 'images/scissors.jpg');
       break;
   }
 
