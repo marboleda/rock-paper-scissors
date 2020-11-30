@@ -1,6 +1,8 @@
 ## Rock Paper Scissors
 Built a Rock Paper Scissors game
 
+Demo: [Link](https://marboleda.github.io/rock-paper-scissors/)
+
 ## Languages
 - HTML
 - CSS
