@@ -48,6 +48,16 @@ button {
     margin: 0 auto;
 }
 
+@media (max-width: 1060px) {
+    #scores {
+        flex-direction: column;
+    }
+
+    #scores > * {
+        margin: 0 auto;
+    }
+}
+
 #playerScore, #computerScore {
     border: 5px solid black;
     background-color: #056DBB;
