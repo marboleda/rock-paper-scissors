@@ -19,6 +19,8 @@ h1, p {
 .round_image {
     border-radius: 100%;
     border: 10px solid #6F73D2;
+    width: 90%;
+    max-width: 300px;
 }
 
 .winner_image {
@@ -67,4 +69,5 @@ button {
     height: 40vh;
     width: 33.3333%;
     text-align: center;
+    min-width: 247px;
 }
